@@ -1,0 +1,49 @@
+{
+  "name": "bonding-register",
+  "version": "0.1.0",
+  "main": "lib/commonjs/index.js",
+  "author": "josojo <josojo@hotmail.de>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "yarn build:sol && yarn build:ts",
+    "build:sol": "hardhat compile --force",
+    "build:ts": "tsc && tsc -p tsconfig.lib.esm.json && tsc -p tsconfig.lib.commonjs.json",
+    "coverage": "MOCHA_CONF='coverage' hardhat coverage",
+    "verify:etherscan": "hardhat etherscan-verify --license LGPL-3.0 --force-license",
+    "deploy": "hardhat deploy",
+    "fmt:sol": "prettier 'src/contracts/**/*.sol' -w",
+    "lint": "yarn lint:sol && yarn lint:ts",
+    "lint:sol": "solhint 'src/contracts/**/*.sol'",
+    "lint:ts": "eslint --max-warnings 0 .",
+    "prepack": "yarn build",
+    "test": "hardhat test",
+    "test:ignored-in-coverage": "MOCHA_CONF='ignored in coverage' hardhat test",
+    "test:mainnet": "MOCHA_CONF='mainnet' hardhat test",
+    "test:no-mainnet": "MOCHA_CONF='no mainnet' hardhat test"
+  },
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "files": [
+    "build/",
+    "lib/",
+    "src/"
+  ],
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.4",
+    "hardhat": "^2.9.3",
+    "hardhat-deploy": "^0.11.4",
+    "hardhat-gas-reporter": "^1.0.8",
+    "mocha": "^10.0.0",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4",
+    "yargs": "^17.4.1",
+    "@types/mocha": "^9.1.1",
+    "@types/yargs": "^17.0.10"
+  }
+}
