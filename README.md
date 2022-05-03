@@ -4,7 +4,7 @@ A _bonding pool_ is a Gnosis Safe instance that is owned solely by the CoW DAO.
 Its creator escrows the amount specified in the [CIP](https://snapshot.org/#/cow.eth/proposal/0x267edf7a0bd3c771cfca763322f011ee106d8d5158612c11da29183260d1dba7) to guarantee that none of the vouched solvers misbehaves.
 The provided contract allows bonding pools to either vouch or invalidate a vouch for a solver.
 
-The provided contract must be called by addresses that escrowed the funds to the bonding pool.
+The provided contract must be called by the owner of the bonding pools. The owner of a bonding pool is defined as the address that escrowed the initial funding to the bonding pools - in case there are several addresses sending the initial funds to the same bonding pool, the bonding pool can not be considered.
 Calls from other addresses will not be officially indexed and it will not start the allowlisting process for new solvers for the COW-Protocol.
 In case of conflicting vouching votes (e.g. two bonding pools vote for the same solver with different cow reward targets), the first vouch will be seen as the valid one and the second vouch will be disregarded. 
 Only updates of currently valid vouches from a bonding pool (e.g. for changing the cowRewardTarget) will be considered.
