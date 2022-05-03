@@ -1,8 +1,8 @@
 # Vouch Register for Solver Bonding
 
-The provided contract allows bonding pools - as described in this [cip](https://snapshot.org/#/cow.eth/proposal/0x267edf7a0bd3c771cfca763322f011ee106d8d5158612c11da29183260d1dba7) - to either vouch and or invalidate a vouch for solver.
-The provided contract must be called by addresses that created the bonding pool (with the minimal funding). Calls from other contracts will not be officially indexed and it will not start the allowlisting process for new solvers for the COW-Protocol.
-In case of conflicting vouching votes(e.g. two pools vote for the same solver with different cow reward targets, the first vouch will be seen as the valid one).
+The provided contract allows bonding pools - as described in this [cip](https://snapshot.org/#/cow.eth/proposal/0x267edf7a0bd3c771cfca763322f011ee106d8d5158612c11da29183260d1dba7) - to either vouch or invalidate a vouch for a solver.
+The provided contract must be called by addresses that created the bonding pool. Calls from other addresses will not be officially indexed and it will not start the allowlisting process for new solvers for the COW-Protocol.
+In case of conflicting vouching votes (e.g. two bonding pools vote for the same solver with different cow reward targets, the first vouch will be seen as the valid one).
 
 
 ## Setting up the project
@@ -17,7 +17,9 @@ yarn build
 The contract can be deployed on rinkeby-chain by running:
 
 ```sh
+export PK='your PK'
 export INFURA_KEY='your infura key here'
+export GAS_PRICE=10
 yarn deploy --network rinkeby
 ```
 
