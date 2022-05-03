@@ -1,8 +1,14 @@
 # Vouch Register for Solver Bonding
 
-The provided contract allows bonding pools - as described in this [cip](https://snapshot.org/#/cow.eth/proposal/0x267edf7a0bd3c771cfca763322f011ee106d8d5158612c11da29183260d1dba7) - to either vouch or invalidate a vouch for a solver.
-The provided contract must be called by addresses that created the bonding pool. Calls from other addresses will not be officially indexed and it will not start the allowlisting process for new solvers for the COW-Protocol.
-In case of conflicting vouching votes (e.g. two bonding pools vote for the same solver with different cow reward targets, the first vouch will be seen as the valid one).
+A _bonding pool_ is a Gnosis Safe instance that is owned solely by the CoW DAO.
+Its creator escrows the amount specified in the [CIP](https://snapshot.org/#/cow.eth/proposal/0x267edf7a0bd3c771cfca763322f011ee106d8d5158612c11da29183260d1dba7) to guarantee that none of the vouched solvers misbehaves.
+The provided contract allows bonding pools to either vouch or invalidate a vouch for a solver.
+
+The provided contract must be called by addresses that escrowed the funds to the bonding pool.
+Calls from other addresses will not be officially indexed and it will not start the allowlisting process for new solvers for the COW-Protocol.
+In case of conflicting vouching votes (e.g. two bonding pools vote for the same solver with different cow reward targets), the first vouch will be seen as the valid one and the second vouch will be disregarded. 
+Only updates of currently valid vouches from a bonding pool (e.g. for changing the cowRewardTarget) will be considered.
+Same rules holds true for the invalidation of vouches: If a solver is invalidated by a bonding pool, although the solver is currently not actively vouched by this bonding pool, the message will be disregarded. 
 
 
 ## Setting up the project
@@ -22,11 +28,6 @@ export INFURA_KEY='your infura key here'
 export GAS_PRICE=10
 yarn deploy --network rinkeby
 ```
-
-It will be associated with the mainnet team controller address automatically.
-
-This contract is designed to be a module for a Gnosis Safe, and before using it it needs to be activated in the controller safe.
-Running the command above will print to screen instructions on how to enable the module.
 
 ## Verifying on Etherscan:
 
