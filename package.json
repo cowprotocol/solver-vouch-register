@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "lib/commonjs/index.js",
   "author": "josojo <josojo@hotmail.de>",
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "private": false,
   "scripts": {
     "build": "yarn build:sol && yarn build:ts",

@@ -6,18 +6,18 @@ contract VouchRegister {
         address indexed solver,
         address indexed bondingPool,
         address cowRewardTarget,
-        address indexed txSender
+        address indexed sender
     );
     event InvalidateVouch(
         address indexed solver,
         address indexed bondingPool,
-        address indexed txSender
+        address indexed sender
     );
 
     constructor() {}
 
     /// @dev Allows a bonding pool to officially vouch for a solver
-    /// Anyone can call this function, but only the events where the txSender is the owner
+    /// Anyone can call this function, but only the events where the sender is the owner
     /// of the referenced bondingPool will be officially indexed
     /// The owner of a bonding pool is identified by the address sending the initial funding amount to the bonding pool
     /// @param solver The solver for whom the bonding pool will cover potential losses/penalities
@@ -39,7 +39,7 @@ contract VouchRegister {
     }
 
     /// @dev Invalidates the vouching for a solver by a bonding pool
-    /// Anyone can call this function, but only the events where the txSender is the owner
+    /// Anyone can call this function, but only the events where the sender is the owner
     /// of the referenced bondingPool will be officially indexed
     /// The owner of a bonding pool is identified by the address sending the initial funding amount to the bonding pool
     /// @param solver The solver for whom the bonding pool will no longer cover any losses/penalities
