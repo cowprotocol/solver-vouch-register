@@ -9,7 +9,6 @@ import { utils } from "ethers";
 import type { HttpNetworkUserConfig } from "hardhat/types";
 import yargs from "yargs";
 
-
 const argv = yargs
   .option("network", {
     type: "string",
@@ -35,7 +34,7 @@ const DEFAULT_MNEMONIC =
   "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
 if (
-  ["rinkeby", "mainnet"].includes(argv.network) &&
+  ["sepolia", "mainnet"].includes(argv.network) &&
   NODE_URL === undefined &&
   INFURA_KEY === undefined
 ) {
@@ -60,7 +59,6 @@ if (GAS_PRICE_GWEI) {
     .parseUnits(GAS_PRICE_GWEI, "gwei")
     .toNumber();
 }
-
 
 export default {
   paths: {
@@ -96,10 +94,20 @@ export default {
       ...sharedNetworkConfig,
       chainId: 100,
     },
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+    arbitrum: {
+      url: `https://arbitrum.llamarpc.com`,
       ...sharedNetworkConfig,
-      chainId: 4,
+      chainId: 42161,
+    },
+    base: {
+      url: `https://mainnet.base.org`,
+      ...sharedNetworkConfig,
+      chainId: 8453,
+    },
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
+      ...sharedNetworkConfig,
+      chainId: 11155111,
     },
   },
   namedAccounts: {
@@ -114,9 +122,9 @@ export default {
   },
   etherscan: {
     apiKey: {
-      xdai: "any api key is good currently",
+      gnosis: ETHERSCAN_API_KEY,
       mainnet: ETHERSCAN_API_KEY,
-      rinkeby: ETHERSCAN_API_KEY,
+      sepolia: ETHERSCAN_API_KEY,
     },
   },
 };
