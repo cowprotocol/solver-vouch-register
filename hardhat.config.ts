@@ -104,6 +104,16 @@ export default {
       ...sharedNetworkConfig,
       chainId: 8453,
     },
+    polygon: {
+      url: `https://polygon-rpc.com/`,
+      ...sharedNetworkConfig,
+      chainId: 137,
+    },
+    avalanche: {
+        url: `https://api.avax.network/ext/bc/C/rpc`,
+        ...sharedNetworkConfig,
+        chainId: 43114,
+    },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
       ...sharedNetworkConfig,
