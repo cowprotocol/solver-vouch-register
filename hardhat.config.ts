@@ -114,6 +114,16 @@ export default {
         ...sharedNetworkConfig,
         chainId: 43114,
     },
+    optimism: {
+        url: `https://mainnet.optimism.io`,
+        ...sharedNetworkConfig,
+        chainId: 10,
+    },
+    bnb: {
+        url: `https://bsc-dataseed.binance.org`,
+        ...sharedNetworkConfig,
+        chainId: 56,
+    },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
       ...sharedNetworkConfig,
