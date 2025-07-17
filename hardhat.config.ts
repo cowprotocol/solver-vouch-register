@@ -124,6 +124,11 @@ export default {
         ...sharedNetworkConfig,
         chainId: 56,
     },
+    lens: {
+      url: `https://rpc.lens.xyz`,
+      ...sharedNetworkConfig,
+      chainId: 232,
+    },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
       ...sharedNetworkConfig,
