@@ -1,0 +1,159 @@
+{
+  "address": "0xAAA4De096D02AE21729aA31D967E148D4e3Ae501",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "solver",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "bondingPool",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "InvalidateVouch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "solver",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "bondingPool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "cowRewardTarget",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "Vouch",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "solver",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "bondingPool",
+          "type": "address[]"
+        }
+      ],
+      "name": "invalidateVouching",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "solver",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "bondingPool",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "cowRewardTarget",
+          "type": "address[]"
+        }
+      ],
+      "name": "vouch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4b3015d87a68ae84bf1eedd53a0cc8dc45574adfd17749b810b792071ab5f09e",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0xcfF6667Db2e68fb04DBB32906C145Df5BDEa3e65",
+    "contractAddress": null,
+    "transactionIndex": 1,
+    "gasUsed": "305942",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x1d4d7a8049cd5fd7a95cb0315d8a1549bc8b6f613e1b1f233db066b1445b8880",
+    "transactionHash": "0x4b3015d87a68ae84bf1eedd53a0cc8dc45574adfd17749b810b792071ab5f09e",
+    "logs": [],
+    "blockNumber": 25038037,
+    "cumulativeGasUsed": "407858",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "2202adf75bf4abe7706bba5c12b43767",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"solver\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bondingPool\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"InvalidateVouch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"solver\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bondingPool\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"cowRewardTarget\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"Vouch\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"solver\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"bondingPool\",\"type\":\"address[]\"}],\"name\":\"invalidateVouching\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"solver\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"bondingPool\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"cowRewardTarget\",\"type\":\"address[]\"}],\"name\":\"vouch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"invalidateVouching(address[],address[])\":{\"details\":\"Invalidates the vouching for a solver by a bonding pool Anyone can call this function, but only the events where the sender is the owner of the referenced bondingPool will be officially indexed The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool\",\"params\":{\"bondingPool\":\"Address of the official bonding pool, from which a potential loss will no longer be covered\",\"solver\":\"The solver for whom the bonding pool will no longer cover any losses/penalities\"}},\"vouch(address[],address[],address[])\":{\"details\":\"Allows a bonding pool to officially vouch for a solver Anyone can call this function, but only the events where the sender is the owner of the referenced bondingPool will be officially indexed The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool\",\"params\":{\"bondingPool\":\"Address of the bonding pool from which a potential loss will be covered\",\"cowRewardTarget\":\"Address to which the solver COW Token reward should be send for the particular solver\",\"solver\":\"The solver for whom the bonding pool will cover potential losses/penalities\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/contracts/VouchRegister.sol\":\"VouchRegister\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[]},\"sources\":{\"src/contracts/VouchRegister.sol\":{\"content\":\"// SPDX-License-Identifier: LGPL-3.0-or-later\\npragma solidity ^0.8;\\n\\ncontract VouchRegister {\\n    event Vouch(\\n        address indexed solver,\\n        address indexed bondingPool,\\n        address cowRewardTarget,\\n        address indexed sender\\n    );\\n    event InvalidateVouch(\\n        address indexed solver,\\n        address indexed bondingPool,\\n        address indexed sender\\n    );\\n\\n    constructor() {}\\n\\n    /// @dev Allows a bonding pool to officially vouch for a solver\\n    /// Anyone can call this function, but only the events where the sender is the owner\\n    /// of the referenced bondingPool will be officially indexed\\n    /// The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool\\n    /// @param solver The solver for whom the bonding pool will cover potential losses/penalities\\n    /// @param bondingPool Address of the bonding pool from which a potential loss will be covered\\n    /// @param cowRewardTarget Address to which the solver COW Token reward should be send for the particular solver\\n    function vouch(\\n        address[] calldata solver,\\n        address[] calldata bondingPool,\\n        address[] calldata cowRewardTarget\\n    ) public {\\n        for (uint256 i = 0; i < solver.length; i++) {\\n            emit Vouch(\\n                solver[i],\\n                bondingPool[i],\\n                cowRewardTarget[i],\\n                msg.sender\\n            );\\n        }\\n    }\\n\\n    /// @dev Invalidates the vouching for a solver by a bonding pool\\n    /// Anyone can call this function, but only the events where the sender is the owner\\n    /// of the referenced bondingPool will be officially indexed\\n    /// The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool\\n    /// @param solver The solver for whom the bonding pool will no longer cover any losses/penalities\\n    /// @param bondingPool Address of the official bonding pool, from which a potential loss will no longer be covered\\n    function invalidateVouching(\\n        address[] calldata solver,\\n        address[] calldata bondingPool\\n    ) public {\\n        for (uint256 i = 0; i < solver.length; i++) {\\n            emit InvalidateVouch(solver[i], bondingPool[i], msg.sender);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x36163ed9bcdaa003833c268ae890967107d8dcf459e175016660a5a75ba5538a\",\"license\":\"LGPL-3.0-or-later\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610492806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80630c912a181461003b5780633587082314610050575b600080fd5b61004e61004936600461028b565b610063565b005b61004e61005e3660046102f7565b61012e565b60005b83811015610127573383838381811061008157610081610391565b905060200201602081019061009691906103c0565b73ffffffffffffffffffffffffffffffffffffffff168686848181106100be576100be610391565b90506020020160208101906100d391906103c0565b73ffffffffffffffffffffffffffffffffffffffff167ffbe946aa1fb3fabb46cdd9f88982f3d42ef58fad11ed89cb15456b9fe4ea7d7d60405160405180910390a48061011f816103fd565b915050610066565b5050505050565b60005b85811015610236573385858381811061014c5761014c610391565b905060200201602081019061016191906103c0565b73ffffffffffffffffffffffffffffffffffffffff1688888481811061018957610189610391565b905060200201602081019061019e91906103c0565b73ffffffffffffffffffffffffffffffffffffffff167fd30c692ff1e6e1e96d8aca701b7f8118d58f64ce4c680feda75c0fc76524f7fa8686868181106101e7576101e7610391565b90506020020160208101906101fc91906103c0565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390a48061022e816103fd565b915050610131565b50505050505050565b60008083601f84011261025157600080fd5b50813567ffffffffffffffff81111561026957600080fd5b6020830191508360208260051b850101111561028457600080fd5b9250929050565b600080600080604085870312156102a157600080fd5b843567ffffffffffffffff808211156102b957600080fd5b6102c58883890161023f565b909650945060208701359150808211156102de57600080fd5b506102eb8782880161023f565b95989497509550505050565b6000806000806000806060878903121561031057600080fd5b863567ffffffffffffffff8082111561032857600080fd5b6103348a838b0161023f565b9098509650602089013591508082111561034d57600080fd5b6103598a838b0161023f565b9096509450604089013591508082111561037257600080fd5b5061037f89828a0161023f565b979a9699509497509295939492505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6000602082840312156103d257600080fd5b813573ffffffffffffffffffffffffffffffffffffffff811681146103f657600080fd5b9392505050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610455577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b506001019056fea264697066735822122007b3367344f777d004e21fb6e77c675e1c8226056fb25ca8bad5794de7c9aa1c64736f6c634300080d0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80630c912a181461003b5780633587082314610050575b600080fd5b61004e61004936600461028b565b610063565b005b61004e61005e3660046102f7565b61012e565b60005b83811015610127573383838381811061008157610081610391565b905060200201602081019061009691906103c0565b73ffffffffffffffffffffffffffffffffffffffff168686848181106100be576100be610391565b90506020020160208101906100d391906103c0565b73ffffffffffffffffffffffffffffffffffffffff167ffbe946aa1fb3fabb46cdd9f88982f3d42ef58fad11ed89cb15456b9fe4ea7d7d60405160405180910390a48061011f816103fd565b915050610066565b5050505050565b60005b85811015610236573385858381811061014c5761014c610391565b905060200201602081019061016191906103c0565b73ffffffffffffffffffffffffffffffffffffffff1688888481811061018957610189610391565b905060200201602081019061019e91906103c0565b73ffffffffffffffffffffffffffffffffffffffff167fd30c692ff1e6e1e96d8aca701b7f8118d58f64ce4c680feda75c0fc76524f7fa8686868181106101e7576101e7610391565b90506020020160208101906101fc91906103c0565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390a48061022e816103fd565b915050610131565b50505050505050565b60008083601f84011261025157600080fd5b50813567ffffffffffffffff81111561026957600080fd5b6020830191508360208260051b850101111561028457600080fd5b9250929050565b600080600080604085870312156102a157600080fd5b843567ffffffffffffffff808211156102b957600080fd5b6102c58883890161023f565b909650945060208701359150808211156102de57600080fd5b506102eb8782880161023f565b95989497509550505050565b6000806000806000806060878903121561031057600080fd5b863567ffffffffffffffff8082111561032857600080fd5b6103348a838b0161023f565b9098509650602089013591508082111561034d57600080fd5b6103598a838b0161023f565b9096509450604089013591508082111561037257600080fd5b5061037f89828a0161023f565b979a9699509497509295939492505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6000602082840312156103d257600080fd5b813573ffffffffffffffffffffffffffffffffffffffff811681146103f657600080fd5b9392505050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610455577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b506001019056fea264697066735822122007b3367344f777d004e21fb6e77c675e1c8226056fb25ca8bad5794de7c9aa1c64736f6c634300080d0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "invalidateVouching(address[],address[])": {
+        "details": "Invalidates the vouching for a solver by a bonding pool Anyone can call this function, but only the events where the sender is the owner of the referenced bondingPool will be officially indexed The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool",
+        "params": {
+          "bondingPool": "Address of the official bonding pool, from which a potential loss will no longer be covered",
+          "solver": "The solver for whom the bonding pool will no longer cover any losses/penalities"
+        }
+      },
+      "vouch(address[],address[],address[])": {
+        "details": "Allows a bonding pool to officially vouch for a solver Anyone can call this function, but only the events where the sender is the owner of the referenced bondingPool will be officially indexed The owner of a bonding pool is identified by the address sending the full initial funding to the bonding pool",
+        "params": {
+          "bondingPool": "Address of the bonding pool from which a potential loss will be covered",
+          "cowRewardTarget": "Address to which the solver COW Token reward should be send for the particular solver",
+          "solver": "The solver for whom the bonding pool will cover potential losses/penalities"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

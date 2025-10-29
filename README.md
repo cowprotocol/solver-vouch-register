@@ -34,5 +34,5 @@ Regardless of chain and deployer, this should create the contract using CREATE2 
 
 ```sh
 export ETHERSCAN_API_KEY=<your etherscan api key>
-yarn verify:etherscan --network sepolia
+yarn hardhat verify --network <your_network> 0xAAA4De096D02AE21729aA31D967E148D4e3Ae501
 ```
