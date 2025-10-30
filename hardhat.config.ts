@@ -168,4 +168,7 @@ export default {
       },
     ],
   },
+  sourcify: {
+    enabled: true
+  }
 };
