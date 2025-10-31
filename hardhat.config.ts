@@ -2,7 +2,7 @@ import "@nomiclabs/hardhat-waffle";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-import "@nomiclabs/hardhat-etherscan";
+import "@nomicfoundation/hardhat-verify";
 
 import dotenv from "dotenv";
 import { utils } from "ethers";
@@ -110,24 +110,34 @@ export default {
       chainId: 137,
     },
     avalanche: {
-        url: `https://api.avax.network/ext/bc/C/rpc`,
-        ...sharedNetworkConfig,
-        chainId: 43114,
+      url: `https://api.avax.network/ext/bc/C/rpc`,
+      ...sharedNetworkConfig,
+      chainId: 43114,
     },
     optimism: {
-        url: `https://mainnet.optimism.io`,
-        ...sharedNetworkConfig,
-        chainId: 10,
+      url: `https://mainnet.optimism.io`,
+      ...sharedNetworkConfig,
+      chainId: 10,
     },
     bnb: {
-        url: `https://bsc-dataseed.binance.org`,
-        ...sharedNetworkConfig,
-        chainId: 56,
+      url: `https://bsc-dataseed.binance.org`,
+      ...sharedNetworkConfig,
+      chainId: 56,
     },
     lens: {
       url: `https://rpc.lens.xyz`,
       ...sharedNetworkConfig,
       chainId: 232,
+    },
+    linea: {
+      url: `https://rpc.linea.build`,
+      ...sharedNetworkConfig,
+      chainId: 59144,
+    },
+    plasma: {
+      url: `https://rpc.plasma.to`,
+      ...sharedNetworkConfig,
+      chainId: 9745,
     },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
@@ -146,10 +156,19 @@ export default {
     gasPrice: 100,
   },
   etherscan: {
-    apiKey: {
-      gnosis: ETHERSCAN_API_KEY,
-      mainnet: ETHERSCAN_API_KEY,
-      sepolia: ETHERSCAN_API_KEY,
-    },
+    apiKey: ETHERSCAN_API_KEY,
+    customChains: [
+      {
+        network: "linea",
+        chainId: 59144,
+        urls: {
+          apiURL: "https://api.lineascan.build/api",
+          browserURL: "https://lineascan.build",
+        },
+      },
+    ],
   },
+  sourcify: {
+    enabled: true
+  }
 };
