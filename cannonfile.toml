@@ -1,0 +1,13 @@
+#:schema https://raw.githubusercontent.com/usecannon/cannon/refs/heads/dev/packages/lsp/src/schema.json
+name = "cow-vouch-register"
+version = "1.0.0"
+
+[var.main]
+salt = "0x0000000000000000000000000000000000000000000000000000000000000000"
+cowSettlement = "<%= AddressZero %>"
+
+[deploy.Register]
+artifact = "VouchRegister"
+create2 = true
+salt = "<%= settings.salt %>"
+args = []

@@ -1,8 +1,10 @@
+import "@nomicfoundation/hardhat-verify";
 import "@nomiclabs/hardhat-waffle";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-import "@nomicfoundation/hardhat-verify";
+
+import "hardhat-cannon";
 
 import dotenv from "dotenv";
 import { utils } from "ethers";
@@ -137,12 +139,17 @@ export default {
     plasma: {
       url: `https://rpc.plasma.to`,
       ...sharedNetworkConfig,
-      chainId: 9745,
+      //chainId: 9745,
     },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
       ...sharedNetworkConfig,
       chainId: 11155111,
+    },
+    plasma: {
+      url: `https://rpc.plasma.to`,
+      ...sharedNetworkConfig,
+      chainId: 9745,
     },
   },
   namedAccounts: {
@@ -164,6 +171,14 @@ export default {
         urls: {
           apiURL: "https://api.lineascan.build/api",
           browserURL: "https://lineascan.build",
+        },
+      },
+      {
+        network: "plasma",
+        chainId: 9745,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api",
+          browserURL: "https://plasmascan.to",
         },
       },
     ],
