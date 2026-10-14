@@ -19,4 +19,6 @@ const deployAuthenticator: DeployFunction = async function ({
   });
 };
 
+deployAuthenticator.tags = [CONTRACT_NAME];   // "VouchRegister"
+
 export default deployAuthenticator;

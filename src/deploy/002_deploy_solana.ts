@@ -1,0 +1,28 @@
+import { DeployFunction } from "hardhat-deploy/types";
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+
+import { SOLANA_CONTRACT_NAME } from "../ts";
+
+const deploySolanaVouchRegister: DeployFunction = async function ({
+  deployments,
+  getNamedAccounts,
+}: HardhatRuntimeEnvironment) {
+  const { deployer } = await getNamedAccounts();
+  const { deploy } = deployments;
+
+  await deploy(SOLANA_CONTRACT_NAME, {
+    from: deployer,
+    gasLimit: 2000000,
+    log: true,
+    args: [],
+    deterministicDeployment: true,
+  });
+};
+
+// Only deploy on Ethereum mainnet (chain id 1); skip on every other network.
+deploySolanaVouchRegister.skip = async ({ getChainId }: HardhatRuntimeEnvironment) =>
+  (await getChainId()) !== "1";
+
+deploySolanaVouchRegister.tags = [SOLANA_CONTRACT_NAME];
+
+export default deploySolanaVouchRegister;
