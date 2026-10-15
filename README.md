@@ -38,7 +38,7 @@ export NODE_URL='your rpc endpoint'
 export GAS_PRICE_GWEI=10
 yarn deploy --network sepolia --tags SolanaVouchRegister
 ```
-
+Regardless of chain and deployer, this should create the contract using CREATE2 at 0x9A8a2850B2A9bEd7aBb81d514Df64595CCE9dCB5.
 
 ## Verifying on Etherscan:
 
