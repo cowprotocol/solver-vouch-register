@@ -24,8 +24,8 @@ The `VouchRegister` contract can be deployed on sepolia-chain by running:
 
 ```sh
 export PK='your PK'
-export INFURA_KEY='your infura key here'
-export GAS_PRICE=10
+export NODE_URL='your rpc endpoint'
+export GAS_PRICE_GWEI=10
 yarn deploy --network sepolia --tags VouchRegister
 ```
 
@@ -34,8 +34,8 @@ Regardless of chain and deployer, this should create the contract using CREATE2 
 Similarly, the `SolanaVouchRegister` contract can be deployed on sepolia-chain by running
 ```sh
 export PK='your PK'
-export INFURA_KEY='your infura key here'
-export GAS_PRICE=10
+export NODE_URL='your rpc endpoint'
+export GAS_PRICE_GWEI=10
 yarn deploy --network sepolia --tags SolanaVouchRegister
 ```
 
