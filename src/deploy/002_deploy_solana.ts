@@ -12,7 +12,7 @@ const deploySolanaVouchRegister: DeployFunction = async function ({
 
   await deploy(SOLANA_CONTRACT_NAME, {
     from: deployer,
-    gasLimit: 2000000,
+    gasLimit: 3000000,
     log: true,
     args: [],
     deterministicDeployment: true,
