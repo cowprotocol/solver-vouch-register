@@ -19,10 +19,6 @@ const deploySolanaVouchRegister: DeployFunction = async function ({
   });
 };
 
-// Only deploy on Ethereum mainnet (chain id 1); skip on every other network.
-deploySolanaVouchRegister.skip = async ({ getChainId }: HardhatRuntimeEnvironment) =>
-  (await getChainId()) !== "1";
-
 deploySolanaVouchRegister.tags = [SOLANA_CONTRACT_NAME];
 
 export default deploySolanaVouchRegister;
