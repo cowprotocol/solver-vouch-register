@@ -31,6 +31,8 @@ yarn deploy --network sepolia --tags VouchRegister
 
 Regardless of chain and deployer, this should create the contract using CREATE2 at 0xAAA4De096D02AE21729aA31D967E148D4e3Ae501.
 
+*Note:* The Ethereum mainnet VouchRegister contract is deployed at [0xb422f2520b0b7FD86f7DA61b32Cc631A59ed7E8F](https://etherscan.io/address/0xb422f2520b0b7FD86f7DA61b32Cc631A59ed7E8F#code).
+
 Similarly, the `SolanaVouchRegister` contract can be deployed on sepolia-chain by running
 ```sh
 export PK='your PK'
